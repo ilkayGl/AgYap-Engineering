@@ -1,0 +1,52 @@
+﻿@using EntityLayer.Concrete
+@model List<MyProject>
+
+<section id="projects" class="projects section-bg">
+    <div class="container" id="proj" data-aos="fade-up">
+
+        <div class="section-header">
+            @foreach (var item in Model)
+            {
+                <h2>@item.ProjectTitle</h2>
+                <p>@item.ProjectTitle2</p>
+
+            }
+
+        </div>
+
+        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+
+            <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">All</li>
+                @foreach (var item in Model)
+                {
+                    <li data-filter=".filter-@item.ProjectKategori">@item.ProjectKategori</li>
+                }
+            </ul>
+
+
+            <!-- End Projects Filters -->
+
+            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-@item.ProjectKategori">
+                        <div class="portfolio-content h-100">
+                            <img src="~/Template/UI/UpConstruction/assets/img/projects/remodeling-1.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>@item.ProjectKategori</h4>
+                                <p>@item.ProjectDetails</p>
+                                <a href="~/Template/UI/UpConstruction/assets/img/projects/remodeling-1.jpg" title="@item.ProjectKategori"
+                               data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                <a href="/ProjectDetail/Index/@item.ProjectId" title="Detayı Gör" class="details-link">
+                                    <i class="bi bi-link-45deg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</section>

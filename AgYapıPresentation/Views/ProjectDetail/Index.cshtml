@@ -1,0 +1,87 @@
+﻿@*@model IEnumerable<EntityLayer.Concrete.MyProject>*@
+@using EntityLayer.Concrete
+@model List<MyProject>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('../Template/UI/UpConstruction/assets/img/breadcrumbs-bg.jpg');">
+        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+            <h2>Proje Detayları</h2>
+            <ol>
+                <li><a href="/Home/Index">AnaSayfa</a></li>
+                <li>Proje Detayları</li>
+            </ol>
+
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Projet Details Section ======= -->
+    <section id="project-details" class="project-details">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="position-relative h-100">
+                <div class="slides-1 portfolio-details-slider swiper">
+                    @foreach (var item in Model)
+                    {
+                        <div class="swiper-wrapper align-items-center">
+
+                            <div class="swiper-slide">
+                                <img src="~/Template/UI/UpConstruction/assets/img/projects/remodeling-1.jpg" alt="">
+                            </div>
+
+
+                        </div>
+                    }
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+
+            <div class="row justify-content-between gy-4 mt-4">
+
+                <div class="col-lg-8">
+
+
+                    @foreach (var item in Model)
+                    {
+                        <h2>@item.ProjectKategori</h2>
+
+                        <div class="portfolio-description">
+
+                            <p>@item.ProjectDetails</p>
+
+
+                        </div>
+                    }
+                </div>
+
+
+                <div class="col-lg-3">
+                    <div class="portfolio-info">
+                        @foreach (var item in Model)
+                        {
+                            <h3>Proje Bilgisi</h3>
+                            <ul>
+                                <li><strong>Kategori</strong> <span>@item.ProjectKategori</span></li>
+                                <li><strong>Müşteri</strong> <span>ASU Company</span></li>
+                                <li><strong>Proje Tarihi</strong> <span>01 March, 2020</span></li>
+                            </ul>
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Projet Details Section -->
+
+</main>
+

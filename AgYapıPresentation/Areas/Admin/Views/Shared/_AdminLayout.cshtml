@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>| Admin </title>
+
+    <link href="~/Template/Admin/AdminPanel/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Template/Admin/AdminPanel/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Template/Admin/AdminPanel/css/animate.css" rel="stylesheet">
+    <link href="~/Template/Admin/AdminPanel/css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="">
+
+    <div id="wrapper">
+
+        <!--NavBarPartialView-->
+        <partial name="~/Areas/Admin/Views/Shared/PartialViews/_NavBarPartialView.cshtml" />
+
+        <div id="page-wrapper" class="gray-bg">
+
+            <!--SideBarPartialView-->
+            <partial name="~/Areas/Admin/Views/Shared/PartialViews/_SideBarPartialView.cshtml" />
+
+
+            <div class="wrapper wrapper-content">
+                @RenderBody()
+
+                <div class="middle-box text-center animated fadeInRightBig">
+                </div>
+
+                <!--FooterPartialView-->
+                <partial name="~/Areas/Admin/Views/Shared/PartialViews/_FooterPartialView.cshtml" />
+
+            </div>
+
+        </div>
+
+        <!-- Mainly scripts -->
+        <script src="~/Template/Admin/AdminPanel/js/jquery-3.1.1.min.js"></script>
+        <script src="~/Template/Admin/AdminPanel/js/popper.min.js"></script>
+        <script src="~/Template/Admin/AdminPanel/js/bootstrap.js"></script>
+        <script src="~/Template/Admin/AdminPanel/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="~/Template/Admin/AdminPanel/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+        <!-- Custom and plugin javascript -->
+        <script src="~/Template/Admin/AdminPanel/js/inspinia.js"></script>
+        <script src="~/Template/Admin/AdminPanel/js/plugins/pace/pace.min.js"></script>
+
+        <!--Toastr-->
+        @*  @await Component.InvokeAsync("Notyf")*@
+
+    </div>
+
+
+</body>
+
+</html>
+
+
+
