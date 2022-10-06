@@ -142,6 +142,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("UserImage")
+                        .HasColumnType("text");
+
                     b.Property<string>("UserMail")
                         .HasColumnType("text");
 

@@ -4,13 +4,13 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element">
-                    @if (ViewBag.writerImage != null)
+                    @if (ViewBag.userImage != null)
                     {
-                        <img alt="image" class="rounded-circle" style="height:5rem;" src="~/WriterImageFiles/@ViewBag.writerImage">
+                        <img alt="image" class="rounded-circle" style="height:5rem;" src="~/UserAdminImage/@ViewBag.userImage">
                     }
                     else
                     {
-                        <img alt="image" class="rounded-circle" style="height:5rem;" src="~/WriterImageFiles/user-icon.jpg">
+                        <img alt="image" class="rounded-circle" style="height:5rem;" src="~/UserAdminImage/user-icon.jpg">
                     }
 
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -20,7 +20,7 @@
                         <span class="text-muted text-xs block">Site Sahibi / Yönetici <b class="caret"></b></span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a class="dropdown-item" href="/Admin/Writer/Index">Profil</a></li>
+                        <li><a class="dropdown-item" href="/Admin/UserAdmin/Index">Profil</a></li>
                         <li><a class="dropdown-item" href="/Admin/Message/InBox/">Mesajlar</a></li>
                         <li class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="/Login/GoogleLogOut">Çıkış Yap</a></li>
@@ -32,13 +32,11 @@
             </li>
 
             <li>
-                <a href="/Admin/Category/Index"><i class="fa fa-th-large"></i> <span class="nav-label">Kategoriler</span></a>
+                <a href="/Admin/UserAdmin/Index"><i class="fa fa-th-large"></i> <span class="nav-label">Profilim</span></a>
             </li>
 
-            <li>
-                <a href="/Admin/BlogTitle/Index"><i class="fa fa-diamond"></i> <span class="nav-label">Blog</span></a>
-            </li>
-            
+
+
             <li>
                 <a href="">
                     <i class="fa fa-envelope"></i> <span class="nav-label">Mesaj Kutusu </span><span class="label label-warning float-
