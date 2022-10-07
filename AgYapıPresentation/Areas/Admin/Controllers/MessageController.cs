@@ -20,13 +20,13 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
         {
             var userMail = User.Identity.Name;
             var userAdminID = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserId).FirstOrDefault();
-            ViewBag.writerID = userAdminID;
+            ViewBag.userID = userAdminID;
 
             var userName = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserName).FirstOrDefault();
             ViewBag.userName = userName;
 
-            var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserName).FirstOrDefault();
-            ViewBag.writerImage = userImage;
+            var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
+            ViewBag.userImage = userImage;
 
 
             return View();
@@ -36,13 +36,13 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
         {
             var userMail = User.Identity.Name;
             var userAdminID = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserId).FirstOrDefault();
-            ViewBag.writerID = userAdminID;
+            ViewBag.userID = userAdminID;
 
             var userName = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserName).FirstOrDefault();
             ViewBag.userName = userName;
 
-            var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserName).FirstOrDefault();
-            ViewBag.writerImage = userImage;
+            var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
+            ViewBag.userImage = userImage;
 
 
 
@@ -54,13 +54,13 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
         {
             var userMail = User.Identity.Name;
             var userAdminID = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserId).FirstOrDefault();
-            ViewBag.writerID = userAdminID;
+            ViewBag.userID = userAdminID;
 
             var userName = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserName).FirstOrDefault();
             ViewBag.userName = userName;
 
-            var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserName).FirstOrDefault();
-            ViewBag.writerImage = userImage;
+            var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
+            ViewBag.userImage = userImage;
 
 
 

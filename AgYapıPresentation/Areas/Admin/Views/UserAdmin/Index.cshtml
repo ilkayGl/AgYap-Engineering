@@ -68,13 +68,13 @@
 
                                 @if (Model.UserImage == null)
                                 {
-                                    <img width="150" height="150" class="rounded-circle" style="border-radius:30px 30px 30px 30px;"
+                                    <img width="150" height="150" class="rounded-circle image-fluid" style="border-radius:30px 30px 30px 30px;"
                                      src="~/UserAdminImage/user-icon.jpg"
                                      alt="User Default Profile Picture">
                                 }
                                 else
                                 {
-                                    <img src="~/UserAdminImage/@Model.UserImage" width="150" height="150" class="rounded-circle"
+                                    <img src="~/UserAdminImage/@ViewBag.userImage" width="150" height="150" class="rounded-circle image-fluid"
                                      style="border-radius:30px 30px 30px 30px;" alt="Profil Resmi" />
                                 }
 

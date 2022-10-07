@@ -16,10 +16,6 @@ namespace EntityLayer.Concrete
         public string UserName { get; set; }
         public string UserMail { get; set; }
         public string UserImage { get; set; }
-
-        [NotMapped]
-        public IFormFile UserImages { get; set; }
-
         public string UserPassword { get; set; }
         public bool Status { get; set; }
     }
