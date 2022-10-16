@@ -50,9 +50,11 @@ namespace AgYapıPresentation
 
                .AddCookie(options =>
                {
-                   options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Login/Index");//Authentication
+                   options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Admin/Login/Index");//Authentication
 
                });
+
+
 
         }
 

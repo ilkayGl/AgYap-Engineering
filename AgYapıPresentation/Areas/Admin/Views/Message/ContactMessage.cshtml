@@ -46,9 +46,9 @@
                         @foreach (var item in Model)
                         {
                             <tr class="read">
-                                <td class="check-mail">
+                               @* <td class="check-mail">
                                     <input type="checkbox" class="i-checks">
-                                </td>
+                                </td>*@
                                 <td><span class="label label-success float-right"><i class="fa fa-medium "></i></span></td>
                                 <td class="mail-ontact">
                                     <strong>@item.ContactUserName</strong>
@@ -78,14 +78,14 @@
 
 <!-- iCheck -->
 <script src="~/Template/Admin/AdminPanel/js/plugins/iCheck/icheck.min.js"></script>
-<script>
+@*<script>
     $(document).ready(function () {
         $('.i-checks').iCheck({
             checkboxClass: 'icheckbox_square-green',
             radioClass: 'iradio_square-green',
         });
     });
-</script>
+</script>*@
 
 
 

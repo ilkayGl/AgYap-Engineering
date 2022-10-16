@@ -23,9 +23,12 @@ namespace DataAccessLayer.Concrete
         public DbSet<MyProject> MyProjects { get; set; }
         public DbSet<UserAdmin> UserAdmins { get; set; }
 
+        //,builder=>builder.EnableRetryOnFailure()
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySQL("server=localhost; port=3306; database=AgYapiDb; user=root; password=cincon5995**; Persist Security Info=False");
+
         }
 
 

@@ -55,7 +55,7 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
                 await HttpContext.SignInAsync(principal);
 
 
-                return RedirectToAction("Index", "Message");
+                return RedirectToAction("Index", "UserAdmin");
 
 
             }
