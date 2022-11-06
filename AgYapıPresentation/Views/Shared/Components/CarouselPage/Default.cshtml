@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concrete
+@model List<Carousel>
+
+<section id="hero" class="hero">
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        @foreach (var item in Model)
+        {
+            <div class="info d-flex align-items-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h2 data-aos="fade-down">@item.Title <br /><span>@item.Description1</span></h2>
+                            <p data-aos="fade-up">@item.Description2</p>
+                            <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">@item.ButtonTitle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+       
+        <vc:carousel2-page></vc:carousel2-page>
+
+    </div>
+
+</section>
+
+

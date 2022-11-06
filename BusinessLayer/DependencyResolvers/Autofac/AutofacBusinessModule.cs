@@ -29,6 +29,12 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<UserAdminManager>().As<IUserAdminService>().SingleInstance();
             builder.RegisterType<EfUserAdminDal>().As<IUserAdminDal>().SingleInstance();
+
+            builder.RegisterType<CarouselManager>().As<ICarouselService>().SingleInstance();
+            builder.RegisterType<EfCarouselDal>().As<ICarouselDal>().SingleInstance();
+
+            builder.RegisterType<Carousel2Manager>().As<ICarousel2Service>().SingleInstance();
+            builder.RegisterType<EfCarousel2Dal>().As<ICarousel2Dal>().SingleInstance();
         }
     }
 }

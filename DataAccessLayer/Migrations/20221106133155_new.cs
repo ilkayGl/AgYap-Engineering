@@ -3,32 +3,29 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class mig_useradminTableADD : Migration
+    public partial class @new : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "UserAdmins",
+                name: "Carousel2s",
                 columns: table => new
                 {
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    Carousel2ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserName = table.Column<string>(type: "text", nullable: true),
-                    UserMail = table.Column<string>(type: "text", nullable: true),
-                    UserPassword = table.Column<string>(type: "text", nullable: true),
-                    UserPasswordConfirm = table.Column<string>(type: "text", nullable: true),
+                    BackImages = table.Column<string>(type: "text", nullable: true),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserAdmins", x => x.UserId);
+                    table.PrimaryKey("PK_Carousel2s", x => x.Carousel2ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "UserAdmins");
+                name: "Carousel2s");
         }
     }
 }

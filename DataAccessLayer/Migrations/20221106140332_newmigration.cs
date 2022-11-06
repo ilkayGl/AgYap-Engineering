@@ -2,20 +2,20 @@
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class mig_admintableUpdate : Migration
+    public partial class newmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "UserPasswordConfirm",
-                table: "UserAdmins");
+                name: "BackImages",
+                table: "Carousels");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "UserPasswordConfirm",
-                table: "UserAdmins",
+                name: "BackImages",
+                table: "Carousels",
                 type: "text",
                 nullable: true);
         }

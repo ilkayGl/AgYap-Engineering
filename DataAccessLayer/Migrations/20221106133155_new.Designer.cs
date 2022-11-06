@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20221002162005_mig_useradminTableADD")]
-    partial class mig_useradminTableADD
+    [Migration("20221106133155_new")]
+    partial class @new
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,6 +43,52 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("AboutId");
 
                     b.ToTable("Abouts");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Carousel", b =>
+                {
+                    b.Property<int>("CarouselID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("BackImages")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ButtonTitle")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description1")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description2")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("text");
+
+                    b.HasKey("CarouselID");
+
+                    b.ToTable("Carousels");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Carousel2", b =>
+                {
+                    b.Property<int>("Carousel2ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("BackImages")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Carousel2ID");
+
+                    b.ToTable("Carousel2s");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
@@ -144,6 +190,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("UserImage")
+                        .HasColumnType("text");
+
                     b.Property<string>("UserMail")
                         .HasColumnType("text");
 
@@ -151,9 +200,6 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("UserPassword")
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserPasswordConfirm")
                         .HasColumnType("text");
 
                     b.HasKey("UserId");
