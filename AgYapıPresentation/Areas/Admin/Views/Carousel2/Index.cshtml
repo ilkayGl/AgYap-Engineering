@@ -1,0 +1,96 @@
+﻿@using EntityLayer.Concrete
+@model List<Carousel2>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h2>AnaSayfa Slider Düzenleme Formu</h2>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+
+                        <a class="">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="table-responsive">
+                        <table class="table  table-bordered table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>#ID</th>
+                                    <th>Arka Plan Resmi</th>
+                                    <th>Sil</th>
+                                    <th>Düzenle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Carousel2ID</td>
+                                        <td>
+                                            <img src="@item.BackImages" style="width:20rem;height:20rem;" alt="image" />
+                                        </td>
+                                        <td>
+                                            <a href="/Admin/Carousel2/Carousel2Remove/@item.Carousel2ID" class="btn btn-danger">
+                                                Sil
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="/Admin/Carousel2/Carousel2Edit/@item.Carousel2ID" class="btn btn-success" data-toggle="modal"
+                                           data-target="#Modal1">
+                                                Düzenle
+                                            </a>
+                                        </td>
+
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <!--ModalCategoryAdded-->
+                        <div class="modal mt-5" id="Modal1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2><b>AnaSayfa</b></h2>
+                                    </div>
+                                    <form method="post" action="/Admin/Carousel2/Carousel2Edit/" autocomplete="off" enctype="multipart/form-data">
+                                        <div class="modal-body">
+
+                                            <label><b>ID</b></label>
+                                            <input type="text" name="Carousel2ID" required class="form-control" />
+                                            <br />
+                                            <label><b>Görsel</b></label>
+                                            <input type="file" name="AboutImage1" class="form-control">
+                                            <br />
+
+
+                                            <button class="btn btn-success"> Ekle</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -193,3 +193,7 @@ C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\Microsoft.Ex
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\System.IO.Pipelines.dll
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\Components\CarouselPage\Default.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\Components\Carousel2Page\Default.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\Index.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\ContactLocation\Index.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Carousel\Index.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Carousel2\Index.cshtml.g.cs
