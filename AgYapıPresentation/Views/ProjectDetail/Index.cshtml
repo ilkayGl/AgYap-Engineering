@@ -1,6 +1,6 @@
 ﻿@*@model IEnumerable<EntityLayer.Concrete.MyProject>*@
 @using EntityLayer.Concrete
-@model List<MyProject>
+@model List<Project>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -31,7 +31,7 @@
                         <div class="swiper-wrapper align-items-center">
 
                             <div class="swiper-slide">
-                                <img src="@item.ProjectImage" alt="">
+                                <img src="@item.ProjectImages" alt="">
                             </div>
 
 
@@ -51,7 +51,7 @@
 
                     @foreach (var item in Model)
                     {
-                        <h2>@item.ProjectKategori</h2>
+                        <h2>@item.ProjectCategory.ProjectCategoryName</h2>
 
                         <div class="portfolio-description">
 
@@ -69,7 +69,7 @@
                         {
                             <h3>Proje Bilgisi</h3>
                             <ul>
-                                <li><strong>Kategori</strong> <span>@item.ProjectKategori</span></li>
+                                <li><strong>Kategori</strong> <span>@item.ProjectCategory.ProjectCategoryName</span></li>
                                 <li><strong>Müşteri</strong> <span>ASU Company</span></li>
                                 <li><strong>Proje Tarihi</strong> <span>01 March, 2020</span></li>
                             </ul>

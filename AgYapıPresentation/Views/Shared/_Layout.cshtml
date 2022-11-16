@@ -33,6 +33,7 @@
 
 <body>
 
+  
     
     <!-- ======= Header ======= -->
     <partial name="~/Views/Shared/PartialViews/_HeaderPartialView.cshtml" />
@@ -40,6 +41,7 @@
     <!-- End Header -->
 
     <main id="main">
+      
         @RenderBody()
     </main><!-- End #main -->
     <!-- ======= Footer ======= -->
@@ -51,7 +53,9 @@
     <div id="preloader">
 
     </div>
-
+    <div class="wsLink">
+        <a href="https://api.whatsapp.com/send?phone=905363807006" target="_blank" title="Bize Ulaşın!"> </a>
+    </div>
     <!-- Vendor JS Files -->
     <script src="~/Template/UI/UpConstruction/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/Template/UI/UpConstruction/assets/vendor/aos/aos.js"></script>
@@ -65,6 +69,39 @@
     <script src="~/Template/UI/UpConstruction/assets/js/main.js"></script>
 
 </body>
+<style>
+    .wsLink {
+        position: fixed;
+        bottom: 6px;
+        left: 2.5%;
+        z-index: 100;
+        width: 60px;
+        height: 60px;
+        -webkit-transition: .2s linear;
+        -moz-transition: .2s linear;
+        transition: .2s linear
+    }
+
+        .wsLink a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+            background: url(https://hemencdn.com/interface/platinum/img/whatsapp.png) no-repeat center;
+            -ms-transform-origin: 50% 100%;
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+            animation-name: tada;
+            animation-duration: 1s;
+            animation-fill-mode: both
+        }
+</style>
+
+
+
 </html>
 
 

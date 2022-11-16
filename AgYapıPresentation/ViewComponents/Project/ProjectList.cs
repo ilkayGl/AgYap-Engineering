@@ -5,16 +5,16 @@ namespace AgYapıPresentation.ViewComponents.Project
 {
     public class ProjectList : ViewComponent
     {
-        private readonly IMyProjectService _myps;
+        private readonly IProjectService _projectService;
 
-        public ProjectList(IMyProjectService myps)
+        public ProjectList(IProjectService projectService)
         {
-            _myps = myps;
+            _projectService = projectService;
         }
 
         public IViewComponentResult Invoke()
         {
-            var values = _myps.GetList();
+            var values = _projectService.GetProjectListWithProjectCategory();
             return View(values);
         }
     }

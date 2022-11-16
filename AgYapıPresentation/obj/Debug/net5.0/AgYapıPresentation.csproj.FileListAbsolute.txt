@@ -147,12 +147,9 @@ C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\zh-Hant\Micr
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_HeaderPartialView.cshtml.g.cs
-C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_ConstructionsPartialView.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_ServicesPartialView.cshtml.g.cs
-C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_OurProjectsPartialView.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_FooterPartialView.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_ReferancesPartialView.cshtml.g.cs
-C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_FeaturesPartialView.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\ProjectDetail\Index.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\ServiceDetails\Index.cshtml.g.cs
@@ -197,3 +194,12 @@ C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\ContactLocation\Index.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Carousel\Index.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Carousel2\Index.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\staticwebassets\AgYapıPresentation.StaticWebAssets.Pack.cache
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\staticwebassets\msbuild.AgYapıPresentation.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\staticwebassets\msbuild.build.AgYapıPresentation.props
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.AgYapıPresentation.props
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.AgYapıPresentation.props
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\Components\ProjectCategoryList\Default.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Project\Index.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\Components\ConstructionList\Default.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Construction\Index.cshtml.g.cs

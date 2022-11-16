@@ -12,16 +12,16 @@ namespace AgYapıPresentation.Controllers
     [AllowAnonymous]
     public class ProjectDetail : Controller
     {
-        IMyProjectService _myProjectService;
+        private readonly IProjectService _projectService;
 
-        public ProjectDetail(IMyProjectService myProjectService)
+        public ProjectDetail(IProjectService projectService)
         {
-            _myProjectService = myProjectService;
+            _projectService = projectService;
         }
 
         public IActionResult Index(int id)
         {
-            var values = _myProjectService.GetList().Where(x=>x.ProjectId==id).ToList();
+            var values = _projectService.GetProjectListWithProjectCategory().Where(x => x.ProjectID == id).ToList();
             return View(values);
         }
     }

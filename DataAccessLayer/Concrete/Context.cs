@@ -49,6 +49,8 @@ namespace DataAccessLayer.Concrete
         public DbSet<UserAdmin> UserAdmins { get; set; }
         public DbSet<Carousel> Carousels { get; set; }
         public DbSet<Carousel2> Carousel2s { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectCategory> ProjectCategories { get; set; }
 
     }
 }

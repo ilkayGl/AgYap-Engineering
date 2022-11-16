@@ -25,6 +25,12 @@
                 <div class="ibox-content">
 
                     <div class="table-responsive">
+
+                        <a href="/Admin/Carousel2/Carousel2Add/" class="btn btn-info mb-3" data-toggle="modal"
+                           data-target="#Modal2">
+                            Yeni Resim Ekle
+                        </a>
+
                         <table class="table  table-bordered table-hover ">
                             <thead>
                                 <tr>
@@ -37,10 +43,11 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+
                                     <tr>
                                         <td>@item.Carousel2ID</td>
                                         <td>
-                                            <img src="@item.BackImages" style="width:20rem;height:20rem;" alt="image" />
+                                            <img src="~/Carousel2Images/@item.BackImages" style="width:20rem;height:20rem;" alt="image" />
                                         </td>
                                         <td>
                                             <a href="/Admin/Carousel2/Carousel2Remove/@item.Carousel2ID" class="btn btn-danger">
@@ -60,12 +67,12 @@
                             </tbody>
                         </table>
 
-                        <!--ModalCategoryAdded-->
+                        <!--Modal1Edit-->
                         <div class="modal mt-5" id="Modal1">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h2><b>AnaSayfa</b></h2>
+                                        <h2><b>AnaSayfa Slider</b></h2>
                                     </div>
                                     <form method="post" action="/Admin/Carousel2/Carousel2Edit/" autocomplete="off" enctype="multipart/form-data">
                                         <div class="modal-body">
@@ -74,9 +81,29 @@
                                             <input type="text" name="Carousel2ID" required class="form-control" />
                                             <br />
                                             <label><b>Görsel</b></label>
-                                            <input type="file" name="AboutImage1" class="form-control">
+                                            <input type="file" name="BackImages" class="form-control">
                                             <br />
 
+                                            <button class="btn btn-success"> Ekle</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Modal2Added-->
+                        <div class="modal mt-5" id="Modal2">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2><b>AnaSayfa Slider</b></h2>
+                                    </div>
+                                    <form method="post" action="/Admin/Carousel2/Carousel2Add/" autocomplete="off" enctype="multipart/form-data">
+                                        <div class="modal-body">
+
+                                            <label><b>Görsel</b></label>
+                                            <input type="file" name="BackImages" class="form-control">
+                                            <br />
 
                                             <button class="btn btn-success"> Ekle</button>
                                         </div>

@@ -1,0 +1,183 @@
+﻿@using EntityLayer.Concrete
+@model List<Project>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h2>Projeler</h2>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+
+                        <a class="">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="table-responsive">
+                        <table class="table  table-bordered table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>#ID</th>
+                                    <th>Proje Detayları</th>
+                                    <th>Resim</th>
+                                    <th>Sil</th>
+                                    <th>Düzenle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ProjectID</td>
+                                        <td>@item.ProjectDetails</td>
+                                        <td><img style="width:6rem;height:6rem" src="@item.ProjectImages"></td>
+
+                                        <td>
+                                            <a href="/Admin/Project/ProjectRemove/@item.ProjectID" class="btn btn-danger">
+                                                Sil
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="/Admin/Project/ProjectEdit/@item.ProjectID" class="btn btn-success" data-toggle="modal"
+                                           data-target="#Modal1">
+                                                Düzenle
+                                            </a>
+                                        </td>
+
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <!--ModalCategoryAdded-->
+                        <div class="modal mt-5" id="Modal1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2><b>AnaSayfa</b></h2>
+                                    </div>
+                                    <form method="post" action="/Admin/Project/ProjectEdit/" autocomplete="off" enctype="multipart/form-data">
+                                        <div class="modal-body">
+
+                                            <label><b>ID</b></label>
+                                            <input type="text" name="ProjectID" required class="form-control" />
+                                            <br />
+                                            <label><b>Proje Detayları</b></label>
+                                            <input type="text" name="ProjectDetails" required class="form-control" />
+                                            <br />
+                                            <label><b>Görsel</b></label>
+                                            <input type="file" name="ProjectImages" class="form-control">
+                                            <br />
+
+
+                                            <button class="btn btn-success"> Ekle</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h2>Proje Kategorileri</h2>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+
+                        <a class="">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="table-responsive">
+                        <table class="table  table-bordered table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>#ID</th>
+                                    <th>Proje Kategorisi</th>
+                                    <th>Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ProjectCategory.ProjectCategoryID</td>
+                                        <td>@item.ProjectCategory.ProjectCategoryName</td>
+
+                                        <td>
+                                            <a href="/Admin/Project/ProjectRemove/@item.ProjectCategory.ProjectCategoryID" class="btn btn-danger">
+                                                Sil
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                            <a href="/Admin/Project/ProjectCategoryAdd/" class="btn btn-info" data-toggle="modal"
+                               data-target="#Modal2">
+
+                                Ekle
+                            </a>
+                        </table>
+
+                        <!--ModalCategoryAdded-->
+                        <div class="modal mt-5" id="Modal2">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2><b>AnaSayfa</b></h2>
+                                    </div>
+                                    <form method="post" action="/Admin/Project/ProjectEdit/" autocomplete="off" enctype="multipart/form-data">
+                                        <div class="modal-body">
+
+                                            <label><b>ID</b></label>
+                                            <input type="text" name="ProjectCategory.ProjectCategoryID" required class="form-control" />
+                                            <br />
+                                            <label><b>Proje Detayları</b></label>
+                                            <input type="text" name="ProjectCategory.ProjectCategoryName" required class="form-control" />
+                                            <br />
+
+
+                                            <button class="btn btn-success"> Ekle</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

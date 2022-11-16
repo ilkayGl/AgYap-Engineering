@@ -40,65 +40,93 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
         }
 
 
-        //[HttpGet]
-        //public IActionResult AboutImageEdit()
-        //{
-        //    var userMail = User.Identity.Name;
-        //    var userAdminID = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserId).FirstOrDefault();
-        //    ViewBag.userID = userAdminID;
+        [HttpGet]
+        public IActionResult Carousel2Edit()
+        {
+            var userMail = User.Identity.Name;
+            var userAdminID = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserId).FirstOrDefault();
+            ViewBag.userID = userAdminID;
 
-        //    var userName = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserName).FirstOrDefault();
-        //    ViewBag.userName = userName;
+            var userName = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserName).FirstOrDefault();
+            ViewBag.userName = userName;
 
-        //    var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
-        //    ViewBag.userImage = userImage;
-
-
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public IActionResult AboutImageEdit(About u, AboutImageDTO p)
-        //{
-
-        //    var dosyaYolu = Path.Combine(_hostEnvironment.WebRootPath, "AboutImage"); //birleştir
-        //    if (!Directory.Exists(dosyaYolu)) //yoksa
-        //    {
-        //        Directory.CreateDirectory(dosyaYolu); //oluştur
-        //    }
-        //    var tamDosyaAdi = Path.Combine(dosyaYolu, p.AboutImage1.FileName); //wwwroote içine  dosya yolu tanımlıyor
-        //                                                                       //file upload
-        //    using (var dosyaAkisi = new FileStream(tamDosyaAdi, FileMode.Create))
-        //    {
-        //        p.AboutImage1.CopyTo(dosyaAkisi);
-        //    }//using ekleme amacımız Gc beklemeden kaynağı yok etmesidir.
-
-        //    u.AboutImage1 = p.AboutImage1.FileName;
+            var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
+            ViewBag.userImage = userImage;
 
 
-        //    u.AboutId = p.AboutId;
-        //    u.AboutTitle = p.AboutTitle;
-        //    u.AboutDetails = p.AboutDetails;
-        //    u.AboutTitle2 = p.AboutTitle2;
-        //    u.AboutStatus = true;
+            return View();
+        }
 
-        //    _aboutService.TUpdateBL(u);
+        [HttpPost]
+        public IActionResult Carousel2Edit(Carousel2 u, Carousel2ImagesDTO p)
+        {
 
-        //    //_notyf.Success("Başarıyla Güncellendi.");
+            var dosyaYolu = Path.Combine(_hostEnvironment.WebRootPath, "Carousel2Images"); //birleştir
+            if (!Directory.Exists(dosyaYolu)) //yoksa
+            {
+                Directory.CreateDirectory(dosyaYolu); //oluştur
+            }
+            var tamDosyaAdi = Path.Combine(dosyaYolu, p.BackImages.FileName); //wwwroote içine  dosya yolu tanımlıyor
+                                                                               //file upload
+            using (var dosyaAkisi = new FileStream(tamDosyaAdi, FileMode.Create))
+            {
+                p.BackImages.CopyTo(dosyaAkisi);
+            }//using ekleme amacımız Gc beklemeden kaynağı yok etmesidir.
 
-        //    return RedirectToAction("Index", "About");
-
-        //}
+            u.BackImages = p.BackImages.FileName;
 
 
+            u.Carousel2ID = p.Carousel2ID;
+            u.Status = true;
 
-        //public IActionResult AboutRemove(int id)
-        //{
+            _carousel2Service.TUpdateBL(u);
 
-        //    var aboutRemove = _aboutService.GetByID(id);
-        //    _aboutService.TDeleteBL(aboutRemove);
+            //_notyf.Success("Başarıyla Güncellendi.");
 
-        //    return RedirectToAction("Index", "About");
-        //}
+            return RedirectToAction("Index", "Carousel2");
+
+        }
+
+
+        [HttpPost]
+        public IActionResult Carousel2Add(Carousel2 u, Carousel2ImagesDTO p)
+        {
+
+            var dosyaYolu = Path.Combine(_hostEnvironment.WebRootPath, "Carousel2Images"); //birleştir
+            if (!Directory.Exists(dosyaYolu)) //yoksa
+            {
+                Directory.CreateDirectory(dosyaYolu); //oluştur
+            }
+            var tamDosyaAdi = Path.Combine(dosyaYolu, p.BackImages.FileName); //wwwroote içine  dosya yolu tanımlıyor
+                                                                              //file upload
+            using (var dosyaAkisi = new FileStream(tamDosyaAdi, FileMode.Create))
+            {
+                p.BackImages.CopyTo(dosyaAkisi);
+            }//using ekleme amacımız Gc beklemeden kaynağı yok etmesidir.
+
+            u.BackImages = p.BackImages.FileName;
+
+
+            u.Carousel2ID = p.Carousel2ID;
+            u.Status = true;
+
+            _carousel2Service.TAddBL(u);
+
+            //_notyf.Success("Başarıyla Güncellendi.");
+
+            return RedirectToAction("Index", "Carousel2");
+
+        }
+
+
+
+        public IActionResult Carousel2Remove(int id)
+        {
+
+            var aboutRemove = _carousel2Service.GetByID(id);
+            _carousel2Service.TDeleteBL(aboutRemove);
+
+            return RedirectToAction("Index", "Carousel2");
+        }
     }
 }

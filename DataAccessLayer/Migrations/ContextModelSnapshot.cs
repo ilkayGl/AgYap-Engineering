@@ -176,6 +176,48 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("MyProjects");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Project", b =>
+                {
+                    b.Property<int>("ProjectID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProjectCategoryID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProjectDetails")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProjectImages")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("ProjectID");
+
+                    b.HasIndex("ProjectCategoryID");
+
+                    b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.ProjectCategory", b =>
+                {
+                    b.Property<int>("ProjectCategoryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProjectCategoryName")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("ProjectCategoryID");
+
+                    b.ToTable("ProjectCategories");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.UserAdmin", b =>
                 {
                     b.Property<int>("UserId")
@@ -200,6 +242,22 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("UserAdmins");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Project", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.ProjectCategory", "ProjectCategory")
+                        .WithMany("Projects")
+                        .HasForeignKey("ProjectCategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProjectCategory");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.ProjectCategory", b =>
+                {
+                    b.Navigation("Projects");
                 });
 #pragma warning restore 612, 618
         }

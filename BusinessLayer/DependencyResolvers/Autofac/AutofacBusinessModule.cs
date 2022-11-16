@@ -35,6 +35,12 @@ namespace BusinessLayer.DependencyResolvers.Autofac
 
             builder.RegisterType<Carousel2Manager>().As<ICarousel2Service>().SingleInstance();
             builder.RegisterType<EfCarousel2Dal>().As<ICarousel2Dal>().SingleInstance();
+
+            builder.RegisterType<ProjectManager>().As<IProjectService>().SingleInstance();
+            builder.RegisterType<EfProjectDal>().As<IProjectDal>().SingleInstance();
+
+            builder.RegisterType<ProjectCategoryManager>().As<IProjectCategoryService>().SingleInstance();
+            builder.RegisterType<EfProjectCategoryDal>().As<IProjectCategoryDal>().SingleInstance();
         }
     }
 }

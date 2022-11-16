@@ -1,0 +1,27 @@
+﻿@using EntityLayer.Concrete
+@model List<ProjectCategory>
+
+
+<ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+    <li data-filter="*" class="filter-active">Tümü</li>
+    @foreach (var item in Model)
+    {
+
+        <li data-filter=".filter-@item.ProjectCategoryName">@item.ProjectCategoryName</li>
+    }
+
+</ul>
+
+
+@*<ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+    <li data-filter="*" class="filter-active">Hepsi</li>
+    @foreach (var item in Model)
+    {
+
+        <li data-filter=".filter-app">@item.ProjectCategoryName</li>
+
+    }
+
+</ul>*@
+
+

@@ -1,0 +1,100 @@
+﻿@using EntityLayer.Concrete
+@model List<MyProject>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h2>Sunulan Hizmetler Listesi</h2>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+
+                        <a class="">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="table-responsive">
+                        <a href="/Admin/Canstruction/CanstructionAdd/" class="btn btn-info" data-toggle="modal"
+                           data-target="#Modal1">
+                            Ekle
+                        </a>
+                        <table class="table  table-bordered table-hover mt-3 ">
+                            <thead>
+                                <tr>
+                                    <th>#ID</th>
+                                    <th>Başlık</th>
+                                    <th>Proje Detayları</th>
+                                    <th>Resim</th>
+                                    <th>Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td style="width:9rem;height:9rem">@item.ProjectId</td>
+                                        <td style="width:20rem;height:15rem">@item.ProjectTitle</td>
+                                        <td style="width:20rem;height:15rem">@item.ProjectDetails</td>
+                                        <td style="width:20rem;height:15rem"><img style="width:20rem;height:15rem" src="@item.ProjectImage"></td>
+
+                                        <td style="width:9rem;height:9rem">
+                                            <a href="/Admin/Project/ProjectRemove/@item.ProjectId" class="btn btn-danger">
+                                                Sil
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <!--ModalCategoryAdded-->
+                        <div class="modal mt-5" id="Modal1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2><b>Sunulan Hizmetler</b></h2>
+                                    </div>
+                                    <form method="post" action="/Admin/Canstruction/CanstructionAdd/" autocomplete="off" enctype="multipart/form-data">
+                                        <div class="form-group modal-body">
+
+                                            <label><b>ID</b></label>
+                                            <input type="text" name="ProjectId" required class="form-control" />
+                                            <br />
+                                            <label><b>Proje Başlık</b></label>
+                                            <input type="text" name="ProjectTitle" required class="form-control" />
+                                            <br />
+                                            <label><b>Proje Detayları</b></label>
+                                            <input type="text" name="ProjectDetails" required class="form-control" />
+                                            <br />
+                                            <label><b>Görsel</b></label>
+                                            <input type="file" name="ProjectImage" class="form-control">
+                                            <br />
+
+
+                                            <button class="btn btn-success"> Ekle</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
