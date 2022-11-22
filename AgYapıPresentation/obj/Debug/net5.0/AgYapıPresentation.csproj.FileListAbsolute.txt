@@ -147,7 +147,6 @@ C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\zh-Hant\Micr
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_HeaderPartialView.cshtml.g.cs
-C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_ServicesPartialView.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_FooterPartialView.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\PartialViews\_ReferancesPartialView.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
@@ -203,3 +202,4 @@ C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Project\Index.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\Components\ConstructionList\Default.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Construction\Index.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Construction\ConstructionAdd2.cshtml.g.cs

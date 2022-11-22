@@ -35,13 +35,16 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
             var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
             ViewBag.userImage = userImage;
 
+            var contactMessage = c.Contacts.Count().ToString();
+            ViewBag.contactMessage = contactMessage;
+
             var values = _carousel2Service.GetList();
             return View(values);
         }
 
 
         [HttpGet]
-        public IActionResult Carousel2Edit()
+        public IActionResult Carousel2Add()
         {
             var userMail = User.Identity.Name;
             var userAdminID = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserId).FirstOrDefault();
@@ -53,39 +56,13 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
             var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
             ViewBag.userImage = userImage;
 
+            var contactMessage = c.Contacts.Count().ToString();
+            ViewBag.contactMessage = contactMessage;
+
 
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Carousel2Edit(Carousel2 u, Carousel2ImagesDTO p)
-        {
-
-            var dosyaYolu = Path.Combine(_hostEnvironment.WebRootPath, "Carousel2Images"); //birleştir
-            if (!Directory.Exists(dosyaYolu)) //yoksa
-            {
-                Directory.CreateDirectory(dosyaYolu); //oluştur
-            }
-            var tamDosyaAdi = Path.Combine(dosyaYolu, p.BackImages.FileName); //wwwroote içine  dosya yolu tanımlıyor
-                                                                               //file upload
-            using (var dosyaAkisi = new FileStream(tamDosyaAdi, FileMode.Create))
-            {
-                p.BackImages.CopyTo(dosyaAkisi);
-            }//using ekleme amacımız Gc beklemeden kaynağı yok etmesidir.
-
-            u.BackImages = p.BackImages.FileName;
-
-
-            u.Carousel2ID = p.Carousel2ID;
-            u.Status = true;
-
-            _carousel2Service.TUpdateBL(u);
-
-            //_notyf.Success("Başarıyla Güncellendi.");
-
-            return RedirectToAction("Index", "Carousel2");
-
-        }
 
 
         [HttpPost]

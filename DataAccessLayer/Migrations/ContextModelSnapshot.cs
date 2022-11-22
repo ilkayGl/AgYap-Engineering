@@ -153,22 +153,28 @@ namespace DataAccessLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Detail2")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Detail3")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Detail4")
+                        .HasColumnType("text");
+
                     b.Property<string>("ProjectDetails")
                         .HasColumnType("text");
 
                     b.Property<string>("ProjectImage")
                         .HasColumnType("text");
 
-                    b.Property<string>("ProjectKategori")
+                    b.Property<string>("ProjectImage2")
                         .HasColumnType("text");
 
                     b.Property<bool>("ProjectStatus")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("ProjectTitle")
-                        .HasColumnType("text");
-
-                    b.Property<string>("ProjectTitle2")
                         .HasColumnType("text");
 
                     b.HasKey("ProjectId");

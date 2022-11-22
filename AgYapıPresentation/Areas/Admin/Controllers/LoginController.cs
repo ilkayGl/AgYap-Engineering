@@ -35,6 +35,9 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
             var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
             ViewBag.userImage = userImage;
 
+            var contactMessage = c.Contacts.Count().ToString();
+            ViewBag.contactMessage = contactMessage;
+
 
 
             var datavalue = c.UserAdmins.FirstOrDefault(x => x.UserMail == admin.UserMail && x.UserPassword == admin.UserPassword);

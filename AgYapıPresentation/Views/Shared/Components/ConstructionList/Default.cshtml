@@ -1,7 +1,7 @@
 ﻿@using EntityLayer.Concrete
 @model List<MyProject>
 
-<section id="get-started" class="get-started section-bg">
+<section id="hizmet" class="get-started section-bg">
     <div class="container constructions" id="constructions" data-aos="fade-up">
 
         <div class="section-header">
@@ -17,12 +17,13 @@
                     <div class="card-item" style="border-radius:20px">
                         <div class="row">
                             <div class="col-xl-5">
-                                <div class="card-bg" style="background-image: url(@item.ProjectImage); border-radius:20px 0 0 20px"></div>
+                                <div class="card-bg" style="background-image: url(../CanstructionImages/@item.ProjectImage); border-radius:20px 0 0 20px"></div>
                             </div>
                             <div class="col-xl-7 d-flex align-items-center">
                                 <div class="card-body table-responsive">
                                     <h4 class="card-title">@item.ProjectTitle</h4>
                                     <p>@item.ProjectDetails</p>
+                                    <a href="/ServiceDetails/Index/@item.ProjectId" class="readmore stretched-link">Devamını Gör <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

@@ -33,6 +33,9 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
             var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
             ViewBag.userImage = userImage;
 
+            var contactMessage = c.Contacts.Count().ToString();
+            ViewBag.contactMessage = contactMessage;
+
             var values = _contactLocationService.GetList();
             return View(values);
         }

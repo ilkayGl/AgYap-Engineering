@@ -47,13 +47,11 @@
                                         <td>@item.ContactLocationId</td>
                                         <td>@item.ContactTitle</td>
                                         <td>@item.ContactTitle2</td>
-                                        <td width="300">@item.ContactMapLocation</td>
-                                        @* <td width="500">
-                                    <img class=" mb-2" src="~/AboutImage/@item.ContactMapLocation" style="width:20rem;height:20rem;" alt="image" />
-                                    </td>*@
+
+                                        <td><textarea>@item.ContactMapLocation</textarea></td>
                                         <td>
-                                            <iframe src="@item.ContactMapLocation" frameborder="0" style="border:0;"
-                                                allowfullscreen></iframe>
+                                            <iframe src="@item.ContactMapLocation" style="border: 0; width: 40rem; height: 20rem"
+                                                allowfullscreen="" class="map"></iframe>
                                         </td>
                                         <td>@item.ContactAdress</td>
                                         <td>@item.ContactEMail</td>

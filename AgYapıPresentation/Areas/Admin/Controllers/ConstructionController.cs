@@ -36,6 +36,10 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
             var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
             ViewBag.userImage = userImage;
 
+            var contactMessage = c.Contacts.Count().ToString();
+            ViewBag.contactMessage = contactMessage;
+
+
             var values = _myProjectService.GetList();
             return View(values);
         }
@@ -43,7 +47,7 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
 
 
         [HttpGet]
-        public IActionResult CanstructionEdit()
+        public IActionResult ConstructionAdd()
         {
             var userMail = User.Identity.Name;
             var userAdminID = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserId).FirstOrDefault();
@@ -55,16 +59,18 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
             var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
             ViewBag.userImage = userImage;
 
+            var contactMessage = c.Contacts.Count().ToString();
+            ViewBag.contactMessage = contactMessage;
 
             return View();
         }
 
 
         [HttpPost]
-        public IActionResult CanstructionAdd(MyProject u, CanstructionImagesDTO p)
+        public IActionResult ConstructionAdd(MyProject u, CanstructionImagesDTO p)
         {
 
-            var dosyaYolu = Path.Combine(_hostEnvironment.WebRootPath, "Carousel2Images"); //birleştir
+            var dosyaYolu = Path.Combine(_hostEnvironment.WebRootPath, "CanstructionImages"); //birleştir
             if (!Directory.Exists(dosyaYolu)) //yoksa
             {
                 Directory.CreateDirectory(dosyaYolu); //oluştur
@@ -81,8 +87,6 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
 
             u.ProjectId = p.ProjectId;
             u.ProjectTitle = p.ProjectTitle;
-            u.ProjectTitle2 = p.ProjectTitle2;
-            u.ProjectKategori = p.ProjectKategori;
             u.ProjectDetails = p.ProjectDetails;
             u.ProjectStatus = true;
 
@@ -94,15 +98,104 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
 
         }
 
+        [HttpPost]
+        public IActionResult ConstructionEdit(MyProject u, CanstructionImagesDTO p)
+        {
+
+            var dosyaYolu = Path.Combine(_hostEnvironment.WebRootPath, "CanstructionImages"); //birleştir
+            if (!Directory.Exists(dosyaYolu)) //yoksa
+            {
+                Directory.CreateDirectory(dosyaYolu); //oluştur
+            }
+            var tamDosyaAdi = Path.Combine(dosyaYolu, p.ProjectImage.FileName); //wwwroote içine  dosya yolu tanımlıyor
+                                                                                //file upload
+            using (var dosyaAkisi = new FileStream(tamDosyaAdi, FileMode.Create))
+            {
+                p.ProjectImage.CopyTo(dosyaAkisi);
+            }//using ekleme amacımız Gc beklemeden kaynağı yok etmesidir.
+
+            u.ProjectImage = p.ProjectImage.FileName;
 
 
-        public IActionResult CanstructionRemove(int id)
+            u.ProjectId = p.ProjectId;
+            u.ProjectTitle = p.ProjectTitle;
+            u.ProjectDetails = p.ProjectDetails;
+            u.ProjectStatus = true;
+
+            _myProjectService.TUpdateBL(u);
+
+            //_notyf.Success("Başarıyla Güncellendi.");
+
+            return RedirectToAction("Index", "Construction");
+
+        }
+
+
+
+        public IActionResult ConstructionRemove(int id)
         {
 
             var aboutRemove = _myProjectService.GetByID(id);
             _myProjectService.TDeleteBL(aboutRemove);
 
             return RedirectToAction("Index", "Construction");
+        }
+
+
+        //Hizmet servis detayları
+        [HttpGet]
+        public IActionResult ConstructionAdd2()
+        {
+            var userMail = User.Identity.Name;
+            var userAdminID = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserId).FirstOrDefault();
+            ViewBag.userID = userAdminID;
+
+            var userName = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserName).FirstOrDefault();
+            ViewBag.userName = userName;
+
+            var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
+            ViewBag.userImage = userImage;
+
+            var contactMessage = c.Contacts.Count().ToString();
+            ViewBag.contactMessage = contactMessage;
+
+
+            var values = _myProjectService.GetList();
+
+            return View(values);
+        }
+
+
+        [HttpPost]
+        public IActionResult ConstructionAdd2(MyProject u, CanstructionImagesDTO p)
+        {
+
+            var dosyaYolu = Path.Combine(_hostEnvironment.WebRootPath, "CanstructionImages"); //birleştir
+            if (!Directory.Exists(dosyaYolu)) //yoksa
+            {
+                Directory.CreateDirectory(dosyaYolu); //oluştur
+            }
+            var tamDosyaAdi = Path.Combine(dosyaYolu, p.ProjectImage.FileName); //wwwroote içine  dosya yolu tanımlıyor
+                                                                                //file upload
+            using (var dosyaAkisi = new FileStream(tamDosyaAdi, FileMode.Create))
+            {
+                p.ProjectImage.CopyTo(dosyaAkisi);
+            }//using ekleme amacımız Gc beklemeden kaynağı yok etmesidir.
+
+            u.ProjectImage = p.ProjectImage.FileName;
+
+
+            u.ProjectId = p.ProjectId;
+            u.ProjectTitle = p.ProjectTitle;
+            u.ProjectDetails = p.ProjectDetails;
+            u.ProjectStatus = true;
+
+            _myProjectService.TAddBL(u);
+
+            //_notyf.Success("Başarıyla Güncellendi.");
+
+            return RedirectToAction("Index", "Construction");
+
         }
     }
 }

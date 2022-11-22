@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,17 @@ namespace AgYapıPresentation.Controllers
     [AllowAnonymous]
     public class ServiceDetails : Controller
     {
-        public IActionResult Index()
+        private readonly IMyProjectService _myProjectService;
+
+        public ServiceDetails(IMyProjectService myProjectService)
         {
-            return View();
+            _myProjectService = myProjectService;
+        }
+
+        public IActionResult Index(int id)
+        {
+            var values = _myProjectService.GetByID(id);
+            return View(values);
         }
     }
 }
