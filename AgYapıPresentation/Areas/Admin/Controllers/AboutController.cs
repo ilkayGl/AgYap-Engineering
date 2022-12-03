@@ -44,7 +44,7 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult AboutImageEdit()
+        public IActionResult AboutImageEdit(int id)
         {
             var userMail = User.Identity.Name;
             var userAdminID = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserId).FirstOrDefault();
@@ -58,7 +58,8 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
             var contactMessage = c.Contacts.Count().ToString();
             ViewBag.contactMessage = contactMessage;
 
-            return View();
+            var values = _aboutService.GetByID(id);
+            return View(values);
         }
 
         [HttpPost]
@@ -95,7 +96,7 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
         }
 
 
-       
+
         public IActionResult AboutRemove(int id)
         {
 

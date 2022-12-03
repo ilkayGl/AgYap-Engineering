@@ -24,7 +24,6 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-
                     <div class="table-responsive">
                         <table class="table  table-bordered table-hover ">
                             <thead>
@@ -48,7 +47,7 @@
                                         <td width="500">@item.AboutDetails</td>
                                         <td width="500">
                                             <img class=" mb-2" src="~/AboutImage/@item.AboutImage1" style="width:20rem;height:20rem;" alt="image" />
-                                            @* <img src="~/AboutImage/@item.AboutImage1" style="width:40rem;height:20rem;" alt="image" />*@
+
                                             <br />
 
                                         <td>
@@ -56,11 +55,9 @@
                                                 Sil
                                             </a>
                                         </td>
+
                                         <td>
-                                            <a href="/Admin/About/AboutEdit/@item.AboutId" class="btn btn-success" data-toggle="modal"
-                                           data-target="#Modal1">
-                                                Düzenle
-                                            </a>
+                                            <a href="/Admin/About/AboutImageEdit/@item.AboutId" class="btn btn-info">Güncelle</a>
                                         </td>
 
 

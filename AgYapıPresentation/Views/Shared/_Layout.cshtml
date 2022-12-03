@@ -32,17 +32,17 @@
 </head>
 
 <body>
-
-  
-    
     <!-- ======= Header ======= -->
     <partial name="~/Views/Shared/PartialViews/_HeaderPartialView.cshtml" />
 
     <!-- End Header -->
 
     <main id="main">
-      
+
         @RenderBody()
+
+        <!--Toastr-->
+        @await Component.InvokeAsync("Notyf")
     </main><!-- End #main -->
     <!-- ======= Footer ======= -->
     <partial name="~/Views/Shared/PartialViews/_FooterPartialView.cshtml" />
@@ -51,7 +51,6 @@
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <div id="preloader">
-
     </div>
     @*Whatsapp*@
     <div class="wsLink">
@@ -102,9 +101,6 @@
             animation-fill-mode: both
         }
 </style>
-
-
-
 </html>
 
 

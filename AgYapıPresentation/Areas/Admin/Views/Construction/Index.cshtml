@@ -25,18 +25,16 @@
                 <div class="ibox-content">
 
                     <div class="table-responsive">
-                        <a href="/Admin/Construction/ConstructionAdd/" class="btn btn-info" data-toggle="modal"
-                           data-target="#Modal1">
+                        <a href="/Admin/Construction/ConstructionAdd/" class="btn btn-info">
                             Ekle
                         </a>
-                        <a href="/Admin/Construction/ConstructionEdit/" class="btn btn-warning" data-toggle="modal"
-                           data-target="#Modal2">
-                            Düzenle
+                        <a href="/Admin/Construction/ConstructionAdd2" target="_blank" class="btn btn-danger">
+                            Detay Sayfasına Git
                         </a>
+
                         <table class="table  table-bordered table-hover mt-3 ">
                             <thead>
                                 <tr>
-                                    <th>#ID</th>
                                     <th>Başlık</th>
                                     <th>Proje Detayları</th>
                                     <th>Resim</th>
@@ -47,7 +45,6 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td style="width:9rem;height:9rem">@item.ProjectId</td>
                                         <td style="width:20rem;height:15rem">@item.ProjectTitle</td>
                                         <td style="width:20rem;height:15rem">@item.ProjectDetails</td>
                                         <td style="width:20rem;height:15rem">
@@ -63,66 +60,6 @@
                                 }
                             </tbody>
                         </table>
-
-                        <!--ModalCategoryAdded-->
-                        <div class="modal mt-5" id="Modal1">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2><b>Sunulan Hizmetler</b></h2>
-                                    </div>
-                                    <form method="post" action="/Admin/Construction/ConstructionAdd/" autocomplete="off" enctype="multipart/form-data">
-                                        <div class="form-group modal-body">
-
-                                            <label><b>Proje Başlık</b></label>
-                                            <input type="text" name="ProjectTitle" required class="form-control" />
-                                            <br />
-                                            <label><b>Proje Detayları</b></label>
-                                            <input type="text" name="ProjectDetails" required class="form-control" />
-                                            <br />
-                                            <label><b>Görsel</b></label>
-                                            <input type="file" name="ProjectImage" class="form-control">
-                                            <br />
-
-
-                                            <button class="btn btn-info">Yeni Ekle</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--ModalCategoryAdded2-->
-                        <div class="modal mt-5" id="Modal2">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2><b>Sunulan Hizmetler</b></h2>
-                                    </div>
-                                    <form method="post" action="/Admin/Construction/ConstructionEdit/" autocomplete="off" enctype="multipart/form-data">
-                                        <div class="form-group modal-body">
-
-                                            <label><b>Proje id</b></label>
-                                            <input type="text" name="ProjectId" required class="form-control" />
-                                            <br />
-                                            <label><b>Proje Başlık</b></label>
-                                            <input type="text" name="ProjectTitle" required class="form-control" />
-                                            <br />
-                                            <label><b>Proje Detayları</b></label>
-                                            <input type="text" name="ProjectDetails" required class="form-control" />
-                                            <br />
-                                            <label><b>Görsel</b></label>
-                                            <input type="file" name="ProjectImage" class="form-control">
-                                            <br />
-
-
-                                            <button class="btn btn-warning"> Güncelle</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
 
                     </div>
 

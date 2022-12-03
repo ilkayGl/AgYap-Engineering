@@ -15,26 +15,12 @@
         <div class="col-lg-9 animated fadeInRight">
             <div class="mail-box-header">
 
-                <form method="get" action="index.html" class="float-right mail-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control form-control-sm" name="search" placeholder="Search email">
-                        <div class="input-group-btn">
-                            <button type="submit" class="btn btn-sm btn-primary">
-                                Search
-                            </button>
-                        </div>
-                    </div>
-                </form>
                 <h2>
                     Gelen Mesajlar <i class="fa fa-medium"></i>
                 </h2>
                 <div class="mail-tools tooltip-demo m-t-md">
-                    <div class="btn-group float-right">
-                        <button class="btn btn-white btn-sm"><i class="fa fa-arrow-left"></i></button>
-                        <button class="btn btn-white btn-sm"><i class="fa fa-arrow-right"></i></button>
 
-                    </div>
-                    <button  class="btn btn-white btn-sm">
+                    <button class="btn btn-white btn-sm">
                         <a href="" style="color:black" class="fa fa-refresh">  Yenile</a>
                     </button>
                 </div>
@@ -46,9 +32,6 @@
                         @foreach (var item in Model)
                         {
                             <tr class="read">
-                               @* <td class="check-mail">
-                                    <input type="checkbox" class="i-checks">
-                                </td>*@
                                 <td><span class="label label-success float-right"><i class="fa fa-medium "></i></span></td>
                                 <td class="mail-ontact">
                                     <strong>@item.ContactUserName</strong>
@@ -59,33 +42,16 @@
                                     @(((DateTime)item.ContactDate).ToString("dd-MMMM-yyyy"))
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger" style="color:white" href="/Admin/Message/ContactDelete/@item.ContactId">
+                                    <a class="btn btn-danger" style="color:white" href="/Admin/Message/MessageRemove/@item.ContactId">
                                         Sil
                                     </a>
                                 </td>
                             </tr>
                         }
 
-
                     </tbody>
                 </table>
-
-
             </div>
         </div>
     </div>
 </div>
-
-<!-- iCheck -->
-<script src="~/Template/Admin/AdminPanel/js/plugins/iCheck/icheck.min.js"></script>
-@*<script>
-    $(document).ready(function () {
-        $('.i-checks').iCheck({
-            checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green',
-        });
-    });
-</script>*@
-
-
-

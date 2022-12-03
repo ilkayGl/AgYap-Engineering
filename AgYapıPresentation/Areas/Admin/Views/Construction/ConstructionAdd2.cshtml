@@ -24,20 +24,11 @@
                 <div class="ibox-content">
 
                     <div class="table-responsive">
-                        <a href="/Admin/Construction/ConstructionAdd/" class="btn btn-info" data-toggle="modal"
-                           data-target="#Modal1">
-                            Ekle
-                        </a>
-                        <a href="/Admin/Construction/ConstructionEdit/" class="btn btn-warning" data-toggle="modal"
-                           data-target="#Modal2">
-                            Düzenle
-                        </a>
+
+
                         <table class="table  table-bordered table-hover mt-3 ">
                             <thead>
                                 <tr>
-                                    <th>#ID</th>
-                                    <th>Başlık</th>
-                                    <th>Proje Detayları</th>
                                     <th>ResimAna</th>
                                     <th>ResimDetay2</th>
                                     <th>Detay2</th>
@@ -45,29 +36,33 @@
                                     <th>Detay4</th>
 
                                     <th>Sil</th>
+                                    <th>Güncelle</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td style="width:9rem;height:9rem">@item.ProjectId</td>
-                                        <td style="width:20rem;height:15rem">@item.ProjectTitle</td>
-                                        <td style="width:20rem;height:15rem">@item.ProjectDetails</td>
                                         <td style="width:20rem;height:15rem">
                                             <img style="width:20rem;height:15rem" src="~/CanstructionImages/@item.ProjectImage">
                                         </td>
                                         <td style="width:20rem;height:15rem">
                                             <img style="width:20rem;height:15rem" src="~/CanstructionImages/@item.ProjectImage2">
                                         </td>
-                                        <td style="width:20rem;height:15rem">@item.Detail2</td>
-                                        <td style="width:20rem;height:15rem">@item.Detail3</td>
-                                        <td style="width:20rem;height:15rem">@item.Detail4</td>
+                                        <td style="width:20rem;height:15rem"><textarea rows="10">@Html.Raw(@item.Detail2)</textarea></td>
+                                        <td style="width:20rem;height:15rem"><textarea rows="10">@Html.Raw(@item.Detail3)</textarea></td>
+                                        <td style="width:20rem;height:15rem"><textarea rows="10">@Html.Raw(@item.Detail4)</textarea></td>
                                         <td style="width:9rem;height:9rem">
                                             <a href="/Admin/Construction/ConstructionRemove/@item.ProjectId" class="btn btn-danger">
                                                 Sil
                                             </a>
                                         </td>
+                                        <td style="width:9rem;height:9rem">
+                                            <a href="/Admin/Construction/ConstructionInsert2/@item.ProjectId" class="btn btn-info">
+                                              Güncelle
+                                            </a>
+                                        </td>
+
                                     </tr>
                                 }
                             </tbody>

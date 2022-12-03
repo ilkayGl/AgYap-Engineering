@@ -20,14 +20,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 </head>
 
 <body class="hold-transition sidebar-mini">
-
-    <!-- Navbar -->
-    <!-- Content Wrapper. Contains page content -->
-    <!-- Content Header (Page header) -->
 
     <section class="content-header">
 
@@ -65,7 +60,6 @@
 
                             <div class="text-center">
 
-
                                 @if (Model.UserImage == null)
                                 {
                                     <img width="150" height="150" class="rounded-circle image-fluid" style="border-radius:30px 30px 30px 30px;"
@@ -80,9 +74,7 @@
 
                             </div>
 
-
                             <p class="text-muted text-center">@Model.UserName </p>
-
 
                         </div>
                     </div>
@@ -92,18 +84,11 @@
                             <strong><i class="far fa-file-alt mr-1"></i> Mail Adresi</strong>
                             <p class="text-muted">@Model.UserMail</p>
                             <hr>
-                            <a href="/WriterPanelMessage/Inbox/" class="btn btn-info btn-block"><b>Mesaj Gelen Kutusu</b></a>
+                            <a href="#" class="btn btn-info btn-block"><b></b></a>
                         </div>
 
-                        <!-- /.card-body -->
-
                     </div>
-
-                    <!-- /.card -->
-
                 </div>
-
-                <!-- /.col -->
 
                 <div class="col-md-9">
 
@@ -114,8 +99,6 @@
                             <div class="tab-content">
 
                                 <div class="active tab-pane" id="settings">
-
-
 
                                     <form class="form-horizontal" asp-action="UserAdminEditProfile" asp-controller="UserAdmin" method="post"
                                           autocomplete="off" enctype="multipart/form-data">
@@ -194,33 +177,13 @@
                                         </div>
 
                                     </form>
-
-
                                 </div>
-
-                                <!-- /.tab-pane -->
-
                             </div>
-
-                            <!-- /.tab-content -->
-
                         </div>
-
-                        <!-- /.card-body -->
-
                     </div>
-
-                    <!-- /.nav-tabs-custom -->
-
                 </div>
-
-                <!-- /.col -->
-
             </div>
-
-            <!-- /.row -->
-
-        </div><!-- /.container-fluid -->
+        </div>
 
     </section>
 

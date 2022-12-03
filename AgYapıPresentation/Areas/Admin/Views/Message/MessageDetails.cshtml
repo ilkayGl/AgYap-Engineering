@@ -11,21 +11,19 @@
         <partial name="~/Areas/Admin/Views/Message/MessageMenuPartialView.cshtml" />
 
         <div class="col-lg-9 animated fadeInRight">
-            <div class="mail-box-header">
+            <div class="mail-box-header table-responsive">
                 <div class="float-right tooltip-demo">
-                    <a href="mail_compose.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Reply">
-                        <i class="fa fa-reply"></i> Reply
-                    </a>
-                    <a href="#" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Print email">
-                        <i class="fa fa-print"></i>
-                    </a>
-                    <a href="mailbox.html" class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Move to trash">
-                        <i class="fa fa-trash-o"></i>
-                    </a>
+                    <h5>
+                        <span class="float-right font-normal">
+                            @(((DateTime)Model.ContactDate).ToString("dd-MMMM-yyyy")) <br />
+                            @(((DateTime)Model.ContactDate).ToString(" h:mm tt"))
+                        </span>
+
+                    </h5>
                 </div>
-                <h2>
-                    Mesaj Görüntüle
-                </h2>
+                <h1 style="color:green">
+                    <strong> Mesaj Görüntüle</strong> <i class="fa fa-medium "></i>
+                </h1>
                 <div class="mail-tools tooltip-demo m-t-md">
 
                     <input type="hidden" asp-for="ContactId" />
@@ -36,20 +34,13 @@
                     <h3>
                         <span class="font-normal">Konu : </span> @Model.ContactSubject
                     </h3>
-                    <h5>
-                        <span class="float-right font-normal">
-                            @(((DateTime)Model.ContactDate).ToString("dd-MMMM-yyyy")) <br />
-                            @(((DateTime)Model.ContactDate).ToString(" h:mm tt"))
-                        </span>
-
-                    </h5>
                     <h4>
                         <span class="font-normal">Tarih : @(((DateTime)Model.ContactDate).ToString("dd-MMMM-yyyy")) </span>
                     </h4>
 
                 </div>
             </div>
-            <div class="mail-box">
+            <div class="mail-box table-responsive">
 
                 <div class="mail-body">
                     <p>

@@ -1,21 +1,12 @@
-using BusinessLayer.Abstract;
-using BusinessLayer.Concrete;
-using DataAccessLayer.Abstract;
-using DataAccessLayer.Concrete;
+using AspNetCoreHero.ToastNotification;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AgYapıPresentation
 {
@@ -41,6 +32,15 @@ namespace AgYapıPresentation
                 .Build();
                 config.Filters.Add(new AuthorizeFilter(policy)); // todo Proje-level-Authorization
             });
+
+            //Toastr
+            services.AddNotyf(config =>
+            {
+                config.DurationInSeconds = 15;
+                config.IsDismissable = true;
+                config.Position = NotyfPosition.BottomRight;
+            });
+
 
             services.AddAuthentication(options =>
             {

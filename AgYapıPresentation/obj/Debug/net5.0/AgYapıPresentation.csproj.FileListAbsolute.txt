@@ -203,3 +203,11 @@ C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Views\Shared\Components\ConstructionList\Default.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Construction\Index.cshtml.g.cs
 C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Construction\ConstructionAdd2.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Construction\ConstructionInsert2.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\Construction\ConstructionAdd.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\Razor\Areas\Admin\Views\About\AboutImageEdit.cshtml.g.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\AgYapıPresentation.StaticWebAssets.xml
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\AspNetCoreHero.ToastNotification.Views.dll
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\bin\Debug\net5.0\AspNetCoreHero.ToastNotification.dll
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\AgYapıPresentation.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Masaustu\AgYapı\AgYapıPresentation\obj\Debug\net5.0\staticwebassets\AgYapıPresentation.StaticWebAssets.xml

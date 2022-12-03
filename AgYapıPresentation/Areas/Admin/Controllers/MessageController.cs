@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Abstract;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using BusinessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -10,10 +11,12 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
     {
         Context c = new Context();
         private readonly IContactService _cts;
+        private readonly INotyfService _notyf;
 
-        public MessageController(IContactService cts)
+        public MessageController(IContactService cts, INotyfService notyf)
         {
             _cts = cts;
+            _notyf = notyf;
         }
 
         public IActionResult Index()
@@ -28,7 +31,7 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
             var userImage = c.UserAdmins.Where(x => x.UserMail == userMail).Select(y => y.UserImage).FirstOrDefault();
             ViewBag.userImage = userImage;
 
-           
+
 
             return View();
         }
@@ -71,6 +74,14 @@ namespace AgYapıPresentation.Areas.Admin.Controllers
 
             var values = _cts.GetByID(id);
             return View(values);
+        }
+
+        public IActionResult MessageRemove(int id)
+        {
+            var deleteValues = _cts.GetByID(id);
+            _cts.TDeleteBL(deleteValues);
+            _notyf.Success("Mesaj Başarıyla Silindi.");
+            return RedirectToAction("ContactMessage", "Message");
         }
     }
 }

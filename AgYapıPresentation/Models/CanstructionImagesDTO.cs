@@ -12,6 +12,10 @@ namespace AgYapıPresentation.Models
         public string ProjectKategori { get; set; }
         public IFormFile ProjectImage { get; set; }
         public string ProjectDetails { get; set; }
+        public IFormFile ProjectImage2 { get; set; }
+        public string Detail2 { get; set; }
+        public string Detail3 { get; set; }
+        public string Detail4 { get; set; }
         public bool ProjectStatus { get; set; }
     }
 }

@@ -29,13 +29,13 @@
 
                 <div class="row position-relative">
 
-                    <div class="col-lg-7 about-img" style="background-image: url(../Template/UI/UpConstruction/assets/img/about.jpg);"></div>
+                    <div class="col-lg-7 about-img" style="border-radius:15px;background-image: url(../AboutImage/@item.AboutImage1);"></div>
 
                     <div class="col-lg-7">
-                        
+
                         <div class="our-story">
-                            <h3>@item.AboutTitle2</h3>
-                            <p>@item.AboutDetails</p>
+                            <h3>@Html.Raw(@item.AboutTitle2)</h3>
+                            <p>@Html.Raw(@item.AboutDetails)</p>
 
                             @*<div class="watch-video d-flex align-items-center position-relative">
                         <i class="bi bi-play-circle"></i>
